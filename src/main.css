@@ -150,6 +150,7 @@
     border: 2px solid transparent;
     cursor: pointer;
     gap: var(--space-xs);
+    user-select: none;
   }
   
   .btn-primary {
@@ -182,9 +183,12 @@
   }
   
   .btn-resume {
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    height: fit-content;
+    align-self: center;  
     background-color: var(--secondary);
     color: white;
-    padding: var(--space-xs) var(--space-md);
     border-radius: var(--radius-md);
     font-weight: 600;
     transition: var(--transition-normal);
@@ -194,7 +198,39 @@
     background-color: #db2777;
     transform: translateY(-2px);
   }
-  
+  /* Hero Section Button Enhancements */
+#view-work-btn, #connect-btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#view-work-btn:hover, #connect-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#view-work-btn::after, #connect-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+#view-work-btn:hover::after, #connect-btn:hover::after {
+  transform: translateX(0);
+}
+
+
+/* Fix for mobile tap highlighting */
+.btn:active {
+  transform: translateY(1px) !important;
+}
   /* Preloader */
   .preloader {
     position: fixed;
@@ -207,12 +243,15 @@
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.5s ease;
-  }
-  
-  .preloader-inner {
-    text-align: center;
-  }
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
   
   .loading-spinner {
     width: 80px;
@@ -265,20 +304,29 @@
   
   /* Navigation */
   .navbar {
-    padding: var(--space-sm) 0;
+    padding: 0.75rem 1rem;
     transition: var(--transition-normal);
     background-color: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(50px);
   }
   
   .navbar.scrolled {
     padding: var(--space-xs) 0;
     box-shadow: var(--shadow-lg);
   }
+  .navbar-nav {
+    align-items: center;
+  }
+  .nav-item {
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+  }
   
   .navbar-brand {
     display: flex;
     align-items: center;
+    margin-right: auto;
     font-family: var(--font-primary);
     font-weight: 700;
     font-size: 1.5rem;
@@ -339,6 +387,28 @@
   }
   
   /* Hero Section */
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #0f172a; /* Dark background */
+    opacity: 1;
+  }
+  
+  /* Add this to make content stand out more */
+  .hero-section,
+  .about-section,
+  .skills-section,
+  .projects-section,
+  .experience-section,
+  .testimonials-section,
+  .contact-section {
+    position: relative;
+    background-color: rgba(15, 23, 42, 0.85); /* Slightly transparent dark */
+  }
   .hero-section {
     min-height: 100vh;
     display: flex;
@@ -438,7 +508,15 @@
     z-index: 2;
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
   }
-  
+  /* Add to your existing button styles */
+.btn.smooth-scroll:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary.smooth-scroll:hover {
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+}
   .tech-icons {
     position: absolute;
     width: 100%;
@@ -654,55 +732,96 @@
     padding-left: var(--space-lg);
   }
   
-  .timeline::before {
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+}
+
+.timeline::before {
     content: '';
     position: absolute;
     top: 0;
     left: 7px;
-    height: 100%;
     width: 2px;
+    height: 100%;
     background: linear-gradient(to bottom, var(--primary), var(--secondary));
-  }
-  
-  .timeline-item {
+}
+
+.timeline-item {
     position: relative;
-    margin-bottom: var(--space-lg);
-  }
-  
-  .timeline-item:last-child {
+    margin-bottom: 2.5rem;
+    padding-left: 2rem;
+}
+
+.timeline-item:last-child {
     margin-bottom: 0;
-  }
-  
-  .timeline-item::before {
+}
+
+.timeline-item::before {
     content: '';
     position: absolute;
     top: 5px;
-    left: -21px;
+    left: -9px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border: 3px solid white;
+    border: 3px solid #f8fafc;
     box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
-  }
-  
-  .timeline-date {
+}
+
+.timeline-date {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--primary);
     margin-bottom: var(--space-xs);
-  }
-  
-  .timeline-content h4 {
+}
+
+.timeline-header h3 {
     font-size: 1.25rem;
     margin-bottom: var(--space-xs);
-  }
-  
-  .timeline-content p {
+}
+
+.timeline-company {
     font-size: 0.875rem;
     color: var(--gray);
+}
+
+.timeline-description li {
+    position: relative;
+    padding-left: var(--space-md);
     margin-bottom: var(--space-xs);
-  }
+    font-size: 0.9375rem;
+}
+
+.timeline-description li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.timeline-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.timeline-tech span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--primary);
+    border-radius: var(--radius-full);
+}
   
   .hobbies-grid {
     display: grid;
@@ -956,24 +1075,24 @@
     position: relative;
     max-width: 800px;
     margin: 0 auto;
+    padding-left: 1.5rem;
   }
   
   .timeline-line {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 2px;
     height: 100%;
     background: linear-gradient(to bottom, var(--primary), var(--secondary));
   }
-  
+
   .timeline-item {
-    position: relative;
-    margin-bottom: var(--space-xl);
-    display: flex;
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 2rem;
   }
-  
+ 
   .timeline-item:last-child {
     margin-bottom: 0;
   }
@@ -1464,5 +1583,17 @@
     .footer-links {
       grid-template-columns: 1fr;
       gap: var(--space-lg);
+    }
+  }
+  @media (max-width: 992px) {
+    .navbar-collapse {
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .btn-resume {
+      margin: 1rem 0 0;
+      width: 100%;
+      text-align: center;
     }
   }
