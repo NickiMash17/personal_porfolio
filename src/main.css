@@ -1560,11 +1560,6 @@ textarea.form-control {
       font-size: 2rem;
   }
 
-  .hero-section {
-    padding: 2rem 0;
-    min-height: calc(100vh - 4rem);
-
-}
   .hero-subtitle {
       font-size: 1.1rem;
   }
