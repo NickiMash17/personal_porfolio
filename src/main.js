@@ -357,3 +357,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Main JavaScript file loaded successfully');
 });
+// Add tooltips to skill icons
+document.querySelectorAll('.skill-icon img').forEach(icon => {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'skill-tooltip';
+    tooltip.textContent = icon.alt.replace(' icon', '');
+    icon.parentNode.appendChild(tooltip);
+    
+    icon.addEventListener('mouseenter', () => {
+        tooltip.style.opacity = '1';
+        tooltip.style.visibility = 'visible';
+    });
+    
+    icon.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+        tooltip.style.visibility = 'hidden';
+    });
+});
