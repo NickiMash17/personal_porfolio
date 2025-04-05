@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nicolette Mashaba - Innovative Full Stack Developer creating modern web experiences with React, Node.js, and cloud technologies. Explore my portfolio of cutting-edge projects.">
+    <title>Nicolette Mashaba | Full Stack Developer</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" as="font" crossorigin>
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#0f172a">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="loading-spinner">
+                <div class="spinner-sector spinner-sector-purple"></div>
+                <div class="spinner-sector spinner-sector-blue"></div>
+                <div class="spinner-sector spinner-sector-pink"></div>
+            </div>
+            <div class="preloader-text">Loading Innovation...</div>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="logo-icon">NM</span>
+                <span class="logo-text">Nicolette Mashaba</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="assets/resume.pdf" class="btn-resume" download="Nicolette_Mashaba_Resume.pdf">
+                            Resume <i class="fas fa-download"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge animate__animated animate__fadeIn">
+                        <span>Full Stack Developer</span>
+                    </div>
+                    <h1 class="hero-title animate__animated animate__fadeInUp">
+                        <span class="wave-emoji">👋</span> Hi, I'm <span class="text-gradient">Nicolette Mashaba</span>
+                    </h1>
+                    <h2 class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                        Building digital experiences that <span class="typing-text"></span>
+                    </h2>
+                    <p class="hero-description animate__animated animate__fadeInUp animate__delay-2s">
+                        I architect and develop full-stack web applications with a focus on performance, 
+                        accessibility, and cutting-edge technologies. Currently enhancing my skills in 
+                        cloud computing and AI integration.
+                    </p>
+                    <div class="hero-cta animate__animated animate__fadeInUp animate__delay-3s">
+                        <a href="#projects" class="btn btn-primary me-3">
+                            View My Work <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            Let's Connect <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                    <div class="hero-social animate__animated animate__fadeInUp animate__delay-4s">
+                        <a href="https://github.com/NickiMash17" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nicolette-mashaba-b094a5221/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/reney_717" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image-col">
+                    <div class="hero-image-wrapper">
+                        <img src="images/profile-3d.png" alt="3D Illustration of Nicolette Mashaba" class="hero-image">
+                        <div class="tech-icons">
+                            <div class="icon react" data-tooltip="React">
+                                <img src="assets/icons/react.svg" alt="React">
+                            </div>
+                            <div class="icon node" data-tooltip="Node.js">
+                                <img src="assets/icons/nodejs.svg" alt="Node.js">
+                            </div>
+                            <div class="icon js" data-tooltip="JavaScript">
+                                <img src="assets/icons/javascript.svg" alt="JavaScript">
+                            </div>
+                            <div class="icon aws" data-tooltip="AWS">
+                                <img src="assets/icons/aws.svg" alt="AWS">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-5 about-image-col">
+                    <div class="about-image-wrapper">
+                        <img src="images/profile.jpg" alt="Nicolette Mashaba" class="about-image">
+                        <div class="about-image-bg"></div>
+                        <div class="about-experience">
+                            <div class="exp-number">3+</div>
+                            <div class="exp-text">Years of<br>Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 about-content">
+                    <h3>Who am I?</h3>
+                    <p>
+                        I'm Nicolette Mashaba, a passionate <strong>Full Stack Developer</strong> based in South Africa 
+                        with expertise in building modern web applications. My journey in tech started 
+                        with a curiosity about how things work, which evolved into a love for creating 
+                        digital solutions that solve real-world problems.
+                    </p>
+                    
+                    <div class="about-tabs">
+                        <ul class="nav nav-tabs" id="aboutTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills-tab-pane" type="button">
+                                    <i class="fas fa-code"></i> Skills
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button">
+                                    <i class="fas fa-graduation-cap"></i> Education
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="hobbies-tab" data-bs-toggle="tab" data-bs-target="#hobbies-tab-pane" type="button">
+                                    <i class="fas fa-heart"></i> Interests
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="aboutTabsContent">
+                            <div class="tab-pane fade show active" id="skills-tab-pane" role="tabpanel">
+                                <div class="skills-list">
+                                    <div class="skill-item">
+                                        <div class="skill-name">Frontend Development</div>
+                                        <div class="skill-level">
+                                            <div class="level-bar" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-name">Backend Development</div>
+                                        <div class="skill-level">
+                                            <div class="level-bar" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-name">UI/UX Design</div>
+                                        <div class="skill-level">
+                                            <div class="level-bar" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-name">Cloud Computing</div>
+                                        <div class="skill-level">
+                                            <div class="level-bar" style="width: 70%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="education-tab-pane" role="tabpanel">
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">2025</div>
+                                        <div class="timeline-content">
+                                            <h4>NQF Level 6 (OC-Software Engineering)</h4>
+                                            <p>CTU Training Solutions</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">2024</div>
+                                        <div class="timeline-content">
+                                            <h4>NQF Level 4 (IT-Programming Foundation)</h4>
+                                            <p>CTU Training Solutions</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">2023</div>
+                                        <div class="timeline-content">
+                                            <h4>Responsive Web Development</h4>
+                                            <p>SheCodes Foundation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="hobbies-tab-pane" role="tabpanel">
+                                <div class="hobbies-grid">
+                                    <div class="hobby-item">
+                                        <i class="fas fa-laptop-code"></i>
+                                        <span>Coding</span>
+                                    </div>
+                                    <div class="hobby-item">
+                                        <i class="fas fa-book"></i>
+                                        <span>Reading</span>
+                                    </div>
+                                    <div class="hobby-item">
+                                        <i class="fas fa-music"></i>
+                                        <span>Music</span>
+                                    </div>
+                                    <div class="hobby-item">
+                                        <i class="fas fa-plane"></i>
+                                        <span>Travel</span>
+                                    </div>
+                                    <div class="hobby-item">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Gaming</span>
+                                    </div>
+                                    <div class="hobby-item">
+                                        <i class="fas fa-camera"></i>
+                                        <span>Photography</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-cta">
+                        <a href="#contact" class="btn btn-primary me-3">Hire Me</a>
+                        <a href="#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What I'm great at</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="skills-tabs">
+                <ul class="nav nav-pills mb-5" id="skillsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="frontend-tab" data-bs-toggle="pill" data-bs-target="#frontend" type="button">
+                            <i class="fas fa-laptop-code"></i> Frontend
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="backend-tab" data-bs-toggle="pill" data-bs-target="#backend" type="button">
+                            <i class="fas fa-server"></i> Backend
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tools-tab" data-bs-toggle="pill" data-bs-target="#tools" type="button">
+                            <i class="fas fa-tools"></i> Tools
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="learning-tab" data-bs-toggle="pill" data-bs-target="#learning" type="button">
+                            <i class="fas fa-rocket"></i> Learning
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="skillsTabContent">
+                    <!-- Frontend Skills -->
+                    <div class="tab-pane fade show active" id="frontend" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/react.svg" alt="React">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>React.js</h4>
+                                        <p>Building interactive UIs with React hooks, context API, and Redux</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/javascript.svg" alt="JavaScript">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>JavaScript (ES6+)</h4>
+                                        <p>Modern JavaScript with functional programming concepts</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/typescript.svg" alt="TypeScript">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>TypeScript</h4>
+                                        <p>Type-safe JavaScript development for scalable applications</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/tailwindcss.svg" alt="Tailwind CSS">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Tailwind CSS</h4>
+                                        <p>Utility-first CSS framework for rapid UI development</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Skills -->
+                    <div class="tab-pane fade" id="backend" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/nodejs.svg" alt="Node.js">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Node.js</h4>
+                                        <p>Building scalable server-side applications with Express.js</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/mongodb.svg" alt="MongoDB">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>MongoDB</h4>
+                                        <p>NoSQL database design and implementation</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/postgresql.svg" alt="PostgreSQL">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>PostgreSQL</h4>
+                                        <p>Relational database management and query optimization</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/graphql.svg" alt="GraphQL">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>GraphQL</h4>
+                                        <p>Building efficient APIs with Apollo Server</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 70%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools -->
+                    <div class="tab-pane fade" id="tools" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/git.svg" alt="Git">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Git & GitHub</h4>
+                                        <p>Version control and collaborative development</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/docker.svg" alt="Docker">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Docker</h4>
+                                        <p>Containerization and deployment workflows</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/figma.svg" alt="Figma">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Figma</h4>
+                                        <p>UI/UX design and prototyping</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/vscode.svg" alt="VS Code">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>VS Code</h4>
+                                        <p>Primary code editor with extensive extensions</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Currently Learning -->
+                    <div class="tab-pane fade" id="learning" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/aws.svg" alt="AWS">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>AWS</h4>
+                                        <p>Cloud infrastructure and serverless architecture</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar learning" style="width: 65%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/kubernetes.svg" alt="Kubernetes">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Kubernetes</h4>
+                                        <p>Container orchestration and deployment</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar learning" style="width: 50%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/python.svg" alt="Python">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Python</h4>
+                                        <p>Scripting and backend development</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar learning" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <img src="assets/icons/tensorflow.svg" alt="TensorFlow">
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Machine Learning</h4>
+                                        <p>Exploring AI and data science applications</p>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar learning" style="width: 40%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My recent work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="divider"></div>
+                <p class="section-description">
+                    Here are some of my recent projects. Each one was built to solve specific problems
+                    and showcase different aspects of my technical skills.
+                </p>
+            </div>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="design">UI/UX</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="project-image">
+                        <img src="images/realhomes.png" alt="RealHomes Project">
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" aria-label="View Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>RealHomes</h3>
+                        <p>A comprehensive real estate platform with property listings, agent profiles, and advanced search functionality.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Mapbox</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="project-image">
+                        <img src="images/ctubuddy.png" alt="CTU Buddy Project">
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" aria-label="View Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CTU Buddy</h3>
+                        <p>Student collaboration platform with study groups, resource sharing, and event scheduling.</p>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>Express</span>
+                            <span>PostgreSQL</span>
+                            <span>Socket.io</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="frontend">
+                    <div class="project-image">
+                        <img src="images/weatherapp.png" alt="Weather App Project">
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" aria-label="View Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather Dashboard</h3>
+                        <p>Interactive weather application with real-time data, forecasts, and location-based services.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Chart.js</span>
+                            <span>OpenWeather API</span>
+                            <span>Geolocation</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="images/portfolio.png" alt="Portfolio Design">
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" aria-label="View Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Design System</h3>
+                        <p>Custom design system with reusable components, animations, and responsive layouts.</p>
+                        <div class="project-tech">
+                            <span>Figma</span>
+                            <span>Storybook</span>
+                            <span>CSS Variables</span>
+                            <span>GSAP</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://github.com/NickiMash17" target="_blank" class="btn btn-primary">
+                    View More on GitHub <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My journey so far</span>
+                <h2 class="section-title">Work Experience</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - Present</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Freelance Full Stack Developer</h3>
+                            <span class="timeline-company">Self-Employed</span>
+                        </div>
+                        <ul class="timeline-description">
+                            <li>Developed and deployed 10+ web applications for clients across various industries</li>
+                            <li>Implemented responsive designs and optimized performance for better user experience</li>
+                            <li>Collaborated with designers and other developers to deliver high-quality products</li>
+                            <li>Integrated third-party APIs and payment gateways for e-commerce solutions</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Frontend Developer Intern</h3>
+                            <span class="timeline-company">Tech Solutions Inc.</span>
+                        </div>
+                        <ul class="timeline-description">
+                            <li>Worked on the company's main product, implementing new features and fixing bugs</li>
+                            <li>Participated in agile development processes including daily standups and sprint planning</li>
+                            <li>Improved application performance by optimizing React components and reducing bundle size</li>
+                            <li>Collaborated with UX designers to implement responsive and accessible interfaces</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>React</span>
+                            <span>Redux</span>
+                            <span>TypeScript</span>
+                            <span>Jest</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - 2022</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Web Development Mentor</h3>
+                            <span class="timeline-company">Coding Bootcamp</span>
+                        </div>
+                        <ul class="timeline-description">
+                            <li>Mentored 50+ students in web development fundamentals and best practices</li>
+                            <li>Created and delivered workshops on HTML, CSS, JavaScript, and React</li>
+                            <li>Reviewed student code and provided constructive feedback for improvement</li>
+                            <li>Assisted in curriculum development and course material creation</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What people say</span>
+                <h2 class="section-title">Client Testimonials</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="splide" id="testimonialSlider">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <!-- Testimonial 1 -->
+                        <div class="splide__slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <p>
+                                        Nicolette delivered an exceptional web application that exceeded our expectations. 
+                                        Her attention to detail and problem-solving skills were impressive. 
+                                        She communicated clearly throughout the project and delivered on time.
+                                    </p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <img src="images/client1.jpg" alt="Client" class="author-image">
+                                    <div class="author-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <span>CEO, TechStart Inc.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="splide__slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <p>
+                                        Working with Nicolette was a pleasure. She transformed our outdated website 
+                                        into a modern, user-friendly platform that has significantly increased our 
+                                        online engagement and conversions.
+                                    </p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <img src="images/client2.jpg" alt="Client" class="author-image">
+                                    <div class="author-info">
+                                        <h4>Michael Brown</h4>
+                                        <span>Marketing Director, Retail Corp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="splide__slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <p>
+                                        Nicolette's technical expertise and creative approach solved complex 
+                                        challenges in our project. She was responsive to feedback and went above 
+                                        and beyond to ensure the final product met all requirements.
+                                    </p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <img src="images/client3.jpg" alt="Client" class="author-image">
+                                    <div class="author-info">
+                                        <h4>David Wilson</h4>
+                                        <span>CTO, FinTech Solutions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get in touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <div class="divider"></div>
+                <p class="section-description">
+                    Have a project in mind or want to discuss potential opportunities? 
+                    Feel free to reach out - I'd love to hear from you!
+                </p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-5 contact-info">
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:nene171408@gmail.com">nene171408@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <span>Johannesburg, South Africa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+1234567890">+27 12 345 6789</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h4>Follow Me</h4>
+                        <div class="social-links">
+                            <a href="https://github.com/NickiMash17" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nicolette-mashaba-b094a5221/" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/reney_717" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7 contact-form">
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                <div class="invalid-feedback">Please enter your name</div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                <div class="invalid-feedback">Please enter a valid email</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                            <div class="invalid-feedback">Please enter a subject</div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            <div class="invalid-feedback">Please enter your message</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">NM</a>
+                    <p>Innovative Full Stack Developer creating digital experiences that matter.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="assets/resume.pdf" download>Download Resume</a></li>
+                            <li><a href="https://github.com/NickiMash17" target="_blank">GitHub</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/nicolette-mashaba-b094a5221/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://twitter.com/yourusername" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.instagram.com/reney_717" target="_blank">Instagram</a></li>
+                            <li><a href="https://github.com/NickiMash17" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> Nicolette Mashaba. All rights reserved.
+                </div>
+                <div class="footer-credits">
+                    Made with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i> in South Africa
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <a href="#hero" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="main.js"></script>
+</body>
+</html>
