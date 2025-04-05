@@ -104,6 +104,7 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-md);
+  
 }
 
 .text-gradient {
@@ -317,6 +318,8 @@ ul {
       rgba(15, 23, 42, 0.98)
   );
   color: white;
+  padding-top: 12rem;    
+  padding-bottom: 8rem;
 }
 
 .hero-content {
@@ -1556,7 +1559,12 @@ textarea.form-control {
   .hero-title {
       font-size: 2rem;
   }
-  
+
+  .hero-section {
+    padding: 2rem 0;
+    min-height: calc(100vh - 4rem);
+
+}
   .hero-subtitle {
       font-size: 1.1rem;
   }
