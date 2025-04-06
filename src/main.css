@@ -1733,3 +1733,200 @@ textarea.form-control {
       padding: 1rem;
   }
 }
+/* General Mobile Adjustments */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero-section {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* About Section */
+  .about-image-wrapper {
+    max-width: 280px;
+  }
+  
+  .about-experience {
+    right: 0;
+    bottom: -15px;
+  }
+  
+  /* Skills Section */
+  .nav-pills {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-pills .nav-link {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Projects Section */
+  .projects-filter {
+    flex-wrap: wrap;
+  }
+  
+  /* Timeline */
+  .timeline::before {
+    left: 31px;
+  }
+  
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    padding-left: 4rem;
+    padding-right: 0;
+  }
+  
+  .timeline-date {
+    position: relative;
+    left: 0;
+    right: auto;
+    top: 0;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+/* Smaller Mobile Devices */
+@media (max-width: 576px) {
+  /* Typography */
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  /* Hero */
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  /* Navigation */
+  .navbar-brand .logo-text {
+    display: none; /* Hide long name on small devices */
+  }
+  
+  /* About Tabs */
+  .nav-tabs {
+    flex-direction: column;
+  }
+  
+  .nav-tabs .nav-link {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Testimonials */
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  .testimonial-author {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .author-image {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer */
+  .footer-column {
+    margin-bottom: 2rem;
+  }
+}
+/* Prevent horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Mobile menu adjustments */
+.navbar-collapse {
+  background: rgba(15, 23, 42, 0.98);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Smaller tech icons on mobile */
+@media (max-width: 768px) {
+  .tech-icons .icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .tech-icons .icon img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Reposition tech icons for mobile */
+  .tech-icons .react {
+    top: 5%;
+    left: 5%;
+  }
+  
+  .tech-icons .node {
+    top: 75%;
+    left: 5%;
+  }
+  
+  .tech-icons .js {
+    top: 15%;
+    right: 5%;
+  }
+  
+  .tech-icons .azure {
+    top: 85%;
+    right: 5%;
+  }
+  
+  .tech-icons .typescript {
+    top: 50%;
+    left: -5%;
+  }
+  
+  .tech-icons .mongodb {
+    top: 50%;
+    right: -5%;
+  }
+}
+
+/* Form input sizing */
+@media (max-width: 576px) {
+  .form-control {
+    padding: 0.75rem;
+  }
+  
+  textarea.form-control {
+    min-height: 120px;
+  }
+}
