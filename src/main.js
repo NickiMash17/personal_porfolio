@@ -374,3 +374,27 @@ document.querySelectorAll('.skill-icon img').forEach(icon => {
         tooltip.style.visibility = 'hidden';
     });
 });
+// Mobile menu close on click
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+        bsCollapse.hide();
+      }
+    });
+  });
+  
+  // Adjust particles density on mobile
+  function adjustParticlesForMobile() {
+    if (window.innerWidth < 768) {
+      if (typeof particlesJS !== 'undefined' && pJSDom.length) {
+        pJSDom[0].pJS.particles.number.value = 60;
+        pJSDom[0].pJS.particles.line_linked.distance = 100;
+        pJSDom[0].pJS.fn.vendors.refresh();
+      }
+    }
+  }
+  
+  window.addEventListener('resize', adjustParticlesForMobile);
+  window.addEventListener('load', adjustParticlesForMobile);

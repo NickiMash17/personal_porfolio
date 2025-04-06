@@ -506,6 +506,11 @@ ul {
       opacity: 0;
   }
 }
+.hero-image-wrapper {
+  margin-top: -50px; /* Pull the image up */
+  position: relative;
+  z-index: 2;
+}
 /* Profile Image Styles */
 .profile-image-container {
   position: relative;
