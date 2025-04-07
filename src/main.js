@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    const preloader = document.querySelector('.preloader');
+    
+    // Ensure the preloader exists before trying to manipulate it
+    if (preloader) {
+      // Hide preloader when all assets are loaded
+      window.addEventListener('load', function() {
+        // Add a slight delay for better UX
+        setTimeout(function() {
+          preloader.style.opacity = '0';
+          preloader.style.visibility = 'hidden';
+          
+          // Remove from DOM after animation completes
+          setTimeout(function() {
+            preloader.style.display = 'none';
+          }, 500);
+        }, 500); // Additional 500ms delay
+      });
+      
+      // Fallback - hide preloader after 3 seconds if load event doesn't fire
+      setTimeout(function() {
+        if (preloader.style.opacity !== '0') {
+          preloader.style.opacity = '0';
+          preloader.style.visibility = 'hidden';
+          setTimeout(function() {
+            preloader.style.display = 'none';
+          }, 500);
+        }
+      }, 3000);
+    }
+    
+    // Rest of your JavaScript code...
+  });
+document.addEventListener('DOMContentLoaded', function() {
     // Hide preloader when page is fully loaded
     window.addEventListener('load', function() {
         const preloader = document.querySelector('.preloader');
