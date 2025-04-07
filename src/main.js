@@ -1,97 +1,92 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // ==================== Preloader ====================
     const preloader = document.querySelector('.preloader');
-    const minDisplayTime = 4000; // 4 seconds minimum display
-    const fadeOutDuration = 1000; // 1 second fade out
+    const minDisplayTime = 3000; // 3 seconds minimum display
+    const fadeOutDuration = 800; // 0.8 second fade out
     let pageLoaded = false;
     let minTimeElapsed = false;
-  
+    let progressInterval;
+    let progress = 0;
+    const startTime = performance.now(); // Track when preloader started
+
     if (preloader) {
-      // Start minimum display timer
-      setTimeout(function() {
-        minTimeElapsed = true;
-        if (pageLoaded) {
-          hidePreloader();
-        }
-      }, minDisplayTime);
-  
-      // Hide when page is loaded
-      window.addEventListener('load', function() {
-        pageLoaded = true;
-        if (minTimeElapsed) {
-          hidePreloader();
-        }
-      });
-  
-      // Fallback in case load event doesn't fire
-      setTimeout(function() {
-        if (!pageLoaded) {
-          hidePreloader();
-        }
-      }, minDisplayTime + 3000); // 7 seconds total maximum
+        // Create progress bar
+        const progressBar = document.createElement('div');
+        progressBar.className = 'preloader-progress';
+        preloader.appendChild(progressBar);
+
+        // Simulate progress
+        progressInterval = setInterval(function() {
+            progress += Math.random() * 10;
+            if (progress > 90) progress = 90;
+            progressBar.style.width = progress + '%';
+        }, 200);
+
+        // Start minimum display timer
+        setTimeout(function() {
+            minTimeElapsed = true;
+            if (pageLoaded) hidePreloader();
+        }, minDisplayTime);
+
+        // Hide when page is loaded
+        window.addEventListener('load', function() {
+            pageLoaded = true;
+            clearInterval(progressInterval);
+            progressBar.style.width = '100%';
+            
+            if (minTimeElapsed) {
+                hidePreloader();
+            } else {
+                setTimeout(hidePreloader, minDisplayTime - (performance.now() - startTime));
+            }
+        });
+
+        // Fallback in case load event doesn't fire
+        setTimeout(function() {
+            if (!pageLoaded) {
+                clearInterval(progressInterval);
+                progressBar.style.width = '100%';
+                hidePreloader();
+            }
+        }, minDisplayTime + 3000); // 6 seconds total maximum
     }
-  
+
     function hidePreloader() {
-      preloader.style.transition = `opacity ${fadeOutDuration}ms ease, visibility ${fadeOutDuration}ms ease`;
-      preloader.style.opacity = '0';
-      preloader.style.visibility = 'hidden';
-      setTimeout(function() {
-        preloader.style.display = 'none';
-      }, fadeOutDuration);
-    }
-  });
-document.addEventListener('DOMContentLoaded', function() {
-    // Hide preloader when page is fully loaded
-    window.addEventListener('load', function() {
-        const preloader = document.querySelector('.preloader');
-        if (preloader) {
+        preloader.classList.add('loaded');
+        
+        setTimeout(function() {
             preloader.style.opacity = '0';
             preloader.style.visibility = 'hidden';
-            setTimeout(() => {
+            
+            setTimeout(function() {
                 preloader.style.display = 'none';
-            }, 500);
-        }
-    });
+                document.dispatchEvent(new Event('preloaderHidden'));
+            }, fadeOutDuration);
+        }, 300);
+    }
 
-    // Initialize particles.js if the element exists
+    // ==================== Particles.js ====================
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             "particles": {
                 "number": {
                     "value": 100,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
+                    "density": { "enable": true, "value_area": 800 }
                 },
-                "color": {
-                    "value": "#8b5cf6"
-                },
+                "color": { "value": "#8b5cf6" },
                 "shape": {
                     "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    }
+                    "stroke": { "width": 0, "color": "#000000" }
                 },
                 "opacity": {
                     "value": 0.7,
                     "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0.3,
-                        "sync": false
-                    }
+                    "anim": { "enable": true, "speed": 1, "opacity_min": 0.3, "sync": false }
                 },
                 "size": {
                     "value": 4,
                     "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 2,
-                        "size_min": 1,
-                        "sync": false
-                    }
+                    "anim": { "enable": true, "speed": 2, "size_min": 1, "sync": false }
                 },
                 "line_linked": {
                     "enable": true,
@@ -108,11 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     "straight": false,
                     "out_mode": "out",
                     "bounce": false,
-                    "attract": {
-                        "enable": true,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
+                    "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 }
                 }
             },
             "interactivity": {
@@ -121,49 +112,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     "onhover": {
                         "enable": true,
                         "mode": "grab",
-                        "parallax": {
-                            "enable": true,
-                            "force": 60,
-                            "smooth": 10
-                        }
+                        "parallax": { "enable": true, "force": 60, "smooth": 10 }
                     },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
+                    "onclick": { "enable": true, "mode": "push" },
                     "resize": true
                 },
                 "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
+                    "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                    "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                    "repulse": { "distance": 200, "duration": 0.4 },
+                    "push": { "particles_nb": 4 },
+                    "remove": { "particles_nb": 2 }
                 }
             },
             "retina_detect": true
         });
     }
 
-    // Initialize Typed.js for hero subtitle
+    // ==================== Typed.js ====================
     const typed = new Typed('.typing-text', {
         strings: [
             'solve problems',
@@ -180,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cursorChar: '|'
     });
 
-    // Initialize Splide.js for testimonials
+    // ==================== Splide.js ====================
     if (document.querySelector('#testimonialSlider')) {
         new Splide('#testimonialSlider', {
             type: 'loop',
@@ -190,15 +156,11 @@ document.addEventListener('DOMContentLoaded', function() {
             pauseOnHover: true,
             arrows: false,
             pagination: true,
-            breakpoints: {
-                768: {
-                    perPage: 1
-                }
-            }
+            breakpoints: { 768: { perPage: 1 } }
         }).mount();
     }
 
-    // Navbar scroll effect with enhanced styling
+    // ==================== Navbar ====================
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         window.addEventListener('scroll', function() {
@@ -209,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Add active class to navbar items based on scroll position
         const sections = document.querySelectorAll('section[id]');
         window.addEventListener('scroll', function() {
             let current = '';
@@ -230,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Back to top button
+    // ==================== Back to Top ====================
     const backToTopBtn = document.querySelector('.back-to-top');
     if (backToTopBtn) {
         window.addEventListener('scroll', function() {
@@ -243,14 +204,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         backToTopBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-    // Enhanced smooth scroll function with proper offset calculation
+    // ==================== Smooth Scroll ====================
     function smoothScrollTo(targetId) {
         const targetElement = document.querySelector(targetId);
         if (!targetElement) return;
@@ -259,16 +217,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const navbarHeight = navbar ? navbar.offsetHeight : 0;
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
 
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-
-        // Update URL without jumping
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         history.pushState(null, null, targetId);
     }
 
-    // Setup all navigation and hero button click events
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             if (this.getAttribute('href') !== '#') {
@@ -278,25 +230,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Specifically set up hero buttons
+    // Hero buttons
     const viewWorkBtn = document.getElementById('viewWorkBtn');
     const connectBtn = document.getElementById('connectBtn');
 
-    if (viewWorkBtn) {
-        viewWorkBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            smoothScrollTo(this.getAttribute('href'));
-        });
-    }
+    if (viewWorkBtn) viewWorkBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        smoothScrollTo(viewWorkBtn.getAttribute('href'));
+    });
 
-    if (connectBtn) {
-        connectBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            smoothScrollTo(this.getAttribute('href'));
-        });
-    }
+    if (connectBtn) connectBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        smoothScrollTo(connectBtn.getAttribute('href'));
+    });
 
-    // Projects filter
+    // ==================== Projects Filter ====================
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
     
@@ -309,17 +257,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 const filterValue = this.getAttribute('data-filter');
                 
                 projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = (filterValue === 'all' || card.getAttribute('data-category') === filterValue) 
+                        ? 'block' 
+                        : 'none';
                 });
             });
         });
     }
 
-    // Form validation
+    // ==================== Form Validation ====================
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -344,98 +290,79 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // GSAP animations
+    // ==================== GSAP Animations ====================
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
         
         gsap.utils.toArray('section').forEach(section => {
             gsap.from(section, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 0,
-                y: 50,
-                duration: 1
+                scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none none' },
+                opacity: 0, y: 50, duration: 1
             });
         });
         
         gsap.utils.toArray('.project-card').forEach((card, i) => {
             gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 0,
-                y: 50,
-                duration: 0.5,
-                delay: i * 0.1
+                scrollTrigger: { trigger: card, start: 'top 80%', toggleActions: 'play none none none' },
+                opacity: 0, y: 50, duration: 0.5, delay: i * 0.1
             });
         });
         
         gsap.utils.toArray('.skill-card').forEach((card, i) => {
             gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                opacity: 0,
-                x: i % 2 === 0 ? -50 : 50,
-                duration: 0.5,
-                delay: i * 0.1
+                scrollTrigger: { trigger: card, start: 'top 80%', toggleActions: 'play none none none' },
+                opacity: 0, x: i % 2 === 0 ? -50 : 50, duration: 0.5, delay: i * 0.1
             });
         });
     }
 
-    // Set current year in footer
+    // ==================== Footer Year ====================
     const yearElement = document.getElementById('year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
 
+    // ==================== Skill Tooltips ====================
+    document.querySelectorAll('.skill-icon img').forEach(icon => {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'skill-tooltip';
+        tooltip.textContent = icon.alt.replace(' icon', '');
+        icon.parentNode.appendChild(tooltip);
+        
+        icon.addEventListener('mouseenter', () => {
+            tooltip.style.opacity = '1';
+            tooltip.style.visibility = 'visible';
+        });
+        
+        icon.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+            tooltip.style.visibility = 'hidden';
+        });
+    });
+
+    // ==================== Mobile Menu ====================
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
+        });
+    });
+  
+    // ==================== Particles Mobile Adjustment ====================
+    function adjustParticlesForMobile() {
+        if (window.innerWidth < 768) {
+            if (typeof particlesJS !== 'undefined' && pJSDom.length) {
+                pJSDom[0].pJS.particles.number.value = 60;
+                pJSDom[0].pJS.particles.line_linked.distance = 100;
+                pJSDom[0].pJS.fn.vendors.refresh();
+            }
+        }
+    }
+  
+    window.addEventListener('resize', adjustParticlesForMobile);
+    window.addEventListener('load', adjustParticlesForMobile);
+
     console.log('Main JavaScript file loaded successfully');
 });
-// Add tooltips to skill icons
-document.querySelectorAll('.skill-icon img').forEach(icon => {
-    const tooltip = document.createElement('div');
-    tooltip.className = 'skill-tooltip';
-    tooltip.textContent = icon.alt.replace(' icon', '');
-    icon.parentNode.appendChild(tooltip);
-    
-    icon.addEventListener('mouseenter', () => {
-        tooltip.style.opacity = '1';
-        tooltip.style.visibility = 'visible';
-    });
-    
-    icon.addEventListener('mouseleave', () => {
-        tooltip.style.opacity = '0';
-        tooltip.style.visibility = 'hidden';
-    });
-});
-// Mobile menu close on click
-document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      const navbarCollapse = document.querySelector('.navbar-collapse');
-      if (navbarCollapse.classList.contains('show')) {
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-        bsCollapse.hide();
-      }
-    });
-  });
-  
-  // Adjust particles density on mobile
-  function adjustParticlesForMobile() {
-    if (window.innerWidth < 768) {
-      if (typeof particlesJS !== 'undefined' && pJSDom.length) {
-        pJSDom[0].pJS.particles.number.value = 60;
-        pJSDom[0].pJS.particles.line_linked.distance = 100;
-        pJSDom[0].pJS.fn.vendors.refresh();
-      }
-    }
-  }
-  
-  window.addEventListener('resize', adjustParticlesForMobile);
-  window.addEventListener('load', adjustParticlesForMobile);
