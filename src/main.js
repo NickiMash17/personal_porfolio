@@ -1,36 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Preloader
     const preloader = document.querySelector('.preloader');
-    
-    // Ensure the preloader exists before trying to manipulate it
+    const minDisplayTime = 4000; // 4 seconds minimum display
+    const fadeOutDuration = 1000; // 1 second fade out
+    let pageLoaded = false;
+    let minTimeElapsed = false;
+  
     if (preloader) {
-      // Hide preloader when all assets are loaded
-      window.addEventListener('load', function() {
-        // Add a slight delay for better UX
-        setTimeout(function() {
-          preloader.style.opacity = '0';
-          preloader.style.visibility = 'hidden';
-          
-          // Remove from DOM after animation completes
-          setTimeout(function() {
-            preloader.style.display = 'none';
-          }, 500);
-        }, 500); // Additional 500ms delay
-      });
-      
-      // Fallback - hide preloader after 3 seconds if load event doesn't fire
+      // Start minimum display timer
       setTimeout(function() {
-        if (preloader.style.opacity !== '0') {
-          preloader.style.opacity = '0';
-          preloader.style.visibility = 'hidden';
-          setTimeout(function() {
-            preloader.style.display = 'none';
-          }, 500);
+        minTimeElapsed = true;
+        if (pageLoaded) {
+          hidePreloader();
         }
-      }, 3000);
+      }, minDisplayTime);
+  
+      // Hide when page is loaded
+      window.addEventListener('load', function() {
+        pageLoaded = true;
+        if (minTimeElapsed) {
+          hidePreloader();
+        }
+      });
+  
+      // Fallback in case load event doesn't fire
+      setTimeout(function() {
+        if (!pageLoaded) {
+          hidePreloader();
+        }
+      }, minDisplayTime + 3000); // 7 seconds total maximum
     }
-    
-    // Rest of your JavaScript code...
+  
+    function hidePreloader() {
+      preloader.style.transition = `opacity ${fadeOutDuration}ms ease, visibility ${fadeOutDuration}ms ease`;
+      preloader.style.opacity = '0';
+      preloader.style.visibility = 'hidden';
+      setTimeout(function() {
+        preloader.style.display = 'none';
+      }, fadeOutDuration);
+    }
   });
 document.addEventListener('DOMContentLoaded', function() {
     // Hide preloader when page is fully loaded

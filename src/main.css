@@ -360,22 +360,22 @@ ul {
   border-radius: 50%;
   border: 8px solid transparent;
   mix-blend-mode: overlay;
-  animation: rotate 1.5s ease-in-out infinite;
+  animation: rotate 2.5s linear infinite;
 }
 
 .spinner-sector-purple {
   border-top-color: var(--primary);
-  animation-delay: 0.1s;
+  animation-delay: 0.3s;
 }
 
 .spinner-sector-blue {
   border-top-color: var(--info);
-  animation-delay: 0.2s;
+  animation-delay: 0.6s;
 }
 
 .spinner-sector-pink {
   border-top-color: var(--secondary);
-  animation-delay: 0.3s;
+  animation-delay: 0.9s;
 }
 
 .preloader-text {
@@ -384,7 +384,7 @@ ul {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
-  animation: pulse 1.5s ease-in-out infinite;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes rotate {
